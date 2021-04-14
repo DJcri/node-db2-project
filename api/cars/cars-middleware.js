@@ -49,7 +49,7 @@ const checkVinNumberUnique = async (req, res, next) => {
   if (!car) {
     next();
   } else {
-    res.status(400).json(car);
+    res.status(400).json({ message: `vin ${vin} is invalid` });
   }
 };
 
