@@ -13,11 +13,11 @@ const getById = (id) => {
 const create = async (carData) => {
   // DO YOUR MAGIC
   const [id] = await db("cars").insert(carData);
-  return db("cars").getById(id);
+  return db("cars").where("id", id);
 };
 
 const getByVin = async (vin) => {
-  return db("cars").where("vin", vin);
+  return db("cars").where("vin", vin).first();
 };
 
 module.exports = {
